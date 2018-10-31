@@ -1,161 +1,134 @@
-<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE HTML>
+<?php if (!defined('THINK_PATH')) exit();?><!DOCTYPE html>
 <html>
-<head>
-	<meta charset="UTF-8">
-<title><?php echo C('WEB_SITE_TITLE');?></title>
-<link href="/Public/static/bootstrap/css/bootstrap.css" rel="stylesheet">
-<link href="/Public/static/bootstrap/css/bootstrap-responsive.css" rel="stylesheet">
-<link href="/Public/static/bootstrap/css/docs.css" rel="stylesheet">
-<link href="/Public/static/bootstrap/css/onethink.css" rel="stylesheet">
+    <head>
+        <title>用户数据</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            table {
+                width: 80%;
+                margin: 0 auto;
+            }
+            table tr td {
+                border: 1px solid #ccc;
+                text-align: center;
+            }
+            h1 {
+                text-align: center;
+                line-height: 100px;
+            }
+            .next-page {
+                text-align: center;
+                line-height: 100px;
+            }
+            .user_nav {
+                display: flex;
+                list-style: none;
+                line-height: 50px;
+            }
+            .user_nav li {
+                width: 100px;
+                text-align: center;
+                color: red;
+            }
+            #remake {
+                width: 400px;
+                height: 500px;
+                background: #ccc;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+                display: none;
+            }
 
-<!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
-<!--[if lt IE 9]>
-<script src="/Public/static/bootstrap/js/html5shiv.js"></script>
-<![endif]-->
+            #remake textarea {
+                width: 100%;
+                height: 100%;
+            }
 
-<!--[if lt IE 9]>
-<script type="text/javascript" src="/Public/static/jquery-1.10.2.min.js"></script>
-<![endif]-->
-<!--[if gte IE 9]><!-->
-<script type="text/javascript" src="/Public/static/jquery-2.0.3.min.js"></script>
-<script type="text/javascript" src="/Public/static/bootstrap/js/bootstrap.min.js"></script>
-<!--<![endif]-->
-<!-- 页面header钩子，一般用于加载插件CSS文件和代码 -->
-<?php echo hook('pageHeader');?>
-
-</head>
-<body>
-	<!-- 头部 -->
-	<!-- 导航条
-================================================== -->
-<div class="navbar navbar-inverse navbar-fixed-top">
-    <div class="navbar-inner">
-        <div class="container">
-            <a class="brand" href="<?php echo U('index/index');?>">OneThink</a>
-            <button type="button" class="btn btn-navbar" data-toggle="collapse" data-target=".nav-collapse">
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <div class="nav-collapse collapse">
-                <ul class="nav">
-                    <?php $__NAV__ = D('Channel')->lists(); if(is_array($__NAV__)): $i = 0; $__LIST__ = $__NAV__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$nav): $mod = ($i % 2 );++$i;?><li>
-                            <a href="<?php echo (get_nav_url($nav["url"])); ?>"><?php echo ($nav["title"]); ?></a>
-                        </li><?php endforeach; endif; else: echo "" ;endif; ?>
-                </ul>
-            </div>
-            <div class="nav-collapse collapse pull-right">
-                <?php if(is_login()): ?><ul class="nav" style="margin-right:0">
-                        <li class="dropdown">
-                            <a href="#" class="dropdown-toggle" data-toggle="dropdown" style="padding-left:0;padding-right:0"><?php echo get_username();?> <b class="caret"></b></a>
-                            <ul class="dropdown-menu">
-                                <li><a href="<?php echo U('User/profile');?>">修改密码</a></li>
-                                <li><a href="<?php echo U('User/logout');?>">退出</a></li>
-                            </ul>
-                        </li>
-                    </ul>
-                <?php else: ?>
-                    <ul class="nav" style="margin-right:0">
-                        <li>
-                            <a href="<?php echo U('User/login');?>">登录</a>
-                        </li>
-                        <li>
-                            <a href="<?php echo U('User/register');?>" style="padding-left:0;padding-right:0">注册</a>
-                        </li>
-                    </ul><?php endif; ?>
-            </div>
-        </div>
-    </div>
-</div>
-
-	<!-- /头部 -->
-	
-	<!-- 主体 -->
-	
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
-        </div>
-    </header>
-
-<div id="main-container" class="container">
-    <div class="row">
-        
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            <?php echo W('Category/lists', array(1, true));?>
+            #bg {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                left: 0;
+                top: 0;
+                overflow: hidden;
+                background: rgba(0, 0, 0, .7);
+                display: none;
+            }
+            span {
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript" src="/Public/static/jquery-2.0.3.min.js"></script>
+    </head>
+    <body>
+        <ul class="user_nav">
+            <li><a href="<?php echo U('Index/index');?>" >用户数据</a></li>
+            <li><a href="<?php echo U('Index/index2');?>">跟踪</a></li>
+            <li><a href="<?php echo U('Index/index3');?>">预约列表</a></li>
         </ul>
-    </div>
+        <h1>用户数据</h1>
+        <table>
+            <tr>
+                <td>id</td>
+                <td>姓名</td>
+                <td>村</td>
+                <td>小区</td>
+                <td>手机号</td>
+                <td width="20%">操作</td>
+            </tr>
 
-        
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <?php $category=D('Category')->getChildrenId(1);$__LIST__ = D('Document')->page(0,10)->lists($category, '`id` DESC', 1,true); if(is_array($__LIST__)): $i = 0; $__LIST__ = $__LIST__;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$list): $mod = ($i % 2 );++$i;?><div class="">
-                    <h3><a href="<?php echo U('Article/detail?id='.$list['id']);?>"><?php echo ($list["title"]); ?></a></h3>
-                </div>
-                <div>
-                    <p class="lead"><?php echo ($list["description"]); ?></p>
-                </div>
-                <div>
-                    <span><a href="<?php echo U('Article/detail?id='.$list['id']);?>">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author"><?php echo (get_username($list["uid"])); ?></span>
-                        <span>于 <?php echo (date('Y-m-d H:i',$list["create_time"])); ?></span> 发表在 <span>
-                        <a href="<?php echo U('Article/lists?category='.get_category_name($list['category_id']));?>"><?php echo (get_category_title($list["category_id"])); ?></a></span> 
-                    </span>
-                </div>
-                <hr/><?php endforeach; endif; else: echo "" ;endif; ?>
+            <?php if(is_array($list)): $i = 0; $__LIST__ = $list;if( count($__LIST__)==0 ) : echo "" ;else: foreach($__LIST__ as $key=>$data): $mod = ($i % 2 );++$i;?><tr>
+                    <td><?php echo ($data["rf_id"]); ?></td>
+                    <td><?php echo ($data["zf_lxr"]); ?></td>
+                    <td><?php echo ($data["rf_c"]); ?></td>
+                    <td>小区</td>
+                    <td><?php echo ($data["zf_lxdh"]); ?></td>
+                    <td width="20%"><span onclick="sendSms()">发送</span>&nbsp;&nbsp;<span onclick="setBj()">标记</span>&nbsp;&nbsp;<span onclick="addRemake()">备注</span>&nbsp;&nbsp;<span onclick="setYX()">有效</span></td>
+                </tr><?php endforeach; endif; else: echo "" ;endif; ?>
+        </table>
 
-        </section>
-    </div>
+
+        <div id="remake">
+            <textarea></textarea>
         </div>
 
-    </div>
-</div>
+        <div id="bg">
 
-<script type="text/javascript">
-    $(function(){
-        $(window).resize(function(){
-            $("#main-container").css("min-height", $(window).height() - 343);
-        }).resize();
-    })
-</script>
-	<!-- /主体 -->
+        </div>
 
-	<!-- 底部 -->
-	
-    <!-- 底部
-    ================================================== -->
-    <footer class="footer">
-      <div class="container">
-          <p> 本站由 <strong><a href="http://www.onethink.cn" target="_blank">OneThink</a></strong> 强力驱动</p>
-      </div>
-    </footer>
+        <div class="next-page">下一页</div>
 
-<script type="text/javascript">
-(function(){
-	var ThinkPHP = window.Think = {
-		"ROOT"   : "", //当前网站地址
-		"APP"    : "/index.php?s=", //当前项目地址
-		"PUBLIC" : "/Public", //项目公共目录地址
-		"DEEP"   : "<?php echo C('URL_PATHINFO_DEPR');?>", //PATHINFO分割符
-		"MODEL"  : ["<?php echo C('URL_MODEL');?>", "<?php echo C('URL_CASE_INSENSITIVE');?>", "<?php echo C('URL_HTML_SUFFIX');?>"],
-		"VAR"    : ["<?php echo C('VAR_MODULE');?>", "<?php echo C('VAR_CONTROLLER');?>", "<?php echo C('VAR_ACTION');?>"]
-	}
-})();
-</script>
- <!-- 用于加载js代码 -->
-<!-- 页面footer钩子，一般用于加载插件JS文件和JS代码 -->
-<?php echo hook('pageFooter', 'widget');?>
-<div class="hidden"><!-- 用于加载统计代码等隐藏元素 -->
-	
-</div>
+    <script>
+        function addRemake() {
+            $("#bg").fadeIn()
+            $("#remake").fadeIn()
+        }
 
-	<!-- /底部 -->
-</body>
+        function setBj() {
+
+        }
+
+        function sendSms() {
+
+        }
+
+        function setYX() {
+            
+        }
+
+
+        window.onload = function () {
+            document.getElementById("bg").onclick = function () {
+                $("#bg").fadeOut()
+                $("#remake").fadeOut()
+            }
+        }
+    </script>
+    </body>
 </html>

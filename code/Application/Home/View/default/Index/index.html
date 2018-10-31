@@ -1,48 +1,136 @@
-<extend name="Base/common"/>
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>用户数据</title>
+        <style>
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            table {
+                width: 80%;
+                margin: 0 auto;
+            }
+            table tr td {
+                border: 1px solid #ccc;
+                text-align: center;
+            }
+            h1 {
+                text-align: center;
+                line-height: 100px;
+            }
+            .next-page {
+                text-align: center;
+                line-height: 100px;
+            }
+            .user_nav {
+                display: flex;
+                list-style: none;
+                line-height: 50px;
+            }
+            .user_nav li {
+                width: 100px;
+                text-align: center;
+                color: red;
+            }
+            #remake {
+                width: 400px;
+                height: 500px;
+                background: #ccc;
+                position: absolute;
+                left: 50%;
+                top: 50%;
+                transform: translate(-50%, -50%);
+                z-index: 10;
+                display: none;
+            }
 
-<block name="header">
-    <header class="jumbotron subhead" id="overview">
-        <div class="container">
-            <h2>源自相同起点，演绎不同精彩！</h2>
-            <p class="lead"></p>
-        </div>
-    </header>
-</block>
+            #remake textarea {
+                width: 100%;
+                height: 100%;
+            }
 
-<block name="side">
-<!-- 左侧 nav
-================================================== -->
-    <div class="span3 bs-docs-sidebar">
-        <ul class="nav nav-list bs-docs-sidenav">
-            {:W('Category/lists', array(1, true))}
+            #bg {
+                width: 100%;
+                height: 100%;
+                position: fixed;
+                left: 0;
+                top: 0;
+                overflow: hidden;
+                background: rgba(0, 0, 0, .7);
+                display: none;
+            }
+            span {
+                cursor: pointer;
+            }
+        </style>
+        <script type="text/javascript" src="__STATIC__/jquery-2.0.3.min.js"></script>
+    </head>
+    <body>
+        <ul class="user_nav">
+            <li><a href="{:U('Index/index')}" >用户数据</a></li>
+            <li><a href="{:U('Index/index2')}">跟踪</a></li>
+            <li><a href="{:U('Index/index3')}">预约列表</a></li>
         </ul>
-    </div>
-</block>
+        <h1>用户数据</h1>
+        <table>
+            <tr>
+                <td>id</td>
+                <td>姓名</td>
+                <td>村</td>
+                <td>小区</td>
+                <td>手机号</td>
+                <td width="20%">操作</td>
+            </tr>
 
-<block name="body">
-    <div class="span9">
-        <!-- Contents
-        ================================================== -->
-        <section id="contents">
-            <article:list name="list" category="1" child="true">
-                <div class="">
-                    <h3><a href="{:U('Article/detail?id='.$list['id'])}">{$list.title}</a></h3>
-                </div>
-                <div>
-                    <p class="lead">{$list.description}</p>
-                </div>
-                <div>
-                    <span><a href="{:U('Article/detail?id='.$list['id'])}">查看全文</a></span>
-                    <span class="pull-right">
-                        <span class="author">{$list.uid|get_username}</span>
-                        <span>于 {$list.create_time|date='Y-m-d H:i',###}</span> 发表在 <span>
-                        <a href="{:U('Article/lists?category='.get_category_name($list['category_id']))}">{$list.category_id|get_category_title}</a></span> 
-                    </span>
-                </div>
-                <hr/>
-            </article:list>
+            <volist name="list" id="data">
+                <tr>
+                    <td>{$data.rf_id}</td>
+                    <td>{$data.zf_lxr}</td>
+                    <td>{$data.rf_c}</td>
+                    <td>小区</td>
+                    <td>{$data.zf_lxdh}</td>
+                    <td width="20%"><span onclick="sendSms()">发送</span>&nbsp;&nbsp;<span onclick="setBj()">标记</span>&nbsp;&nbsp;<span onclick="addRemake()">备注</span>&nbsp;&nbsp;<span onclick="setYX()">有效</span></td>
+                </tr>
+            </volist>
+        </table>
 
-        </section>
-    </div>
+
+        <div id="remake">
+            <textarea></textarea>
         </div>
-</block>
+
+        <div id="bg">
+
+        </div>
+
+        <div class="next-page">下一页</div>
+
+    <script>
+        function addRemake() {
+            $("#bg").fadeIn()
+            $("#remake").fadeIn()
+        }
+
+        function setBj() {
+
+        }
+
+        function sendSms() {
+
+        }
+
+        function setYX() {
+            
+        }
+
+
+        window.onload = function () {
+            document.getElementById("bg").onclick = function () {
+                $("#bg").fadeOut()
+                $("#remake").fadeOut()
+            }
+        }
+    </script>
+    </body>
+</html>

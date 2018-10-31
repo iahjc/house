@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 
 namespace Home\Controller;
+use Home\Model\Users1Model;
 
 /**
  * 前台首页控制器
@@ -17,23 +18,22 @@ class IndexController extends HomeController {
 
 	//系统首页
     public function index(){
-    	if(IS_CLI){
-            $data = M('Content')->field("id,content")->select();
-            foreach ($data as $value) {
-                $value['content'] = ubb($value['content']);
-                M('Content')->save($value);
-            }
+        $users1 = new Users1Model();
+        $list = $users1->userList();
+        $this->assign('list', $list);
+    	$this->display();
+    }
 
-        } else {
-            $category = D('Category')->getTree();
-            $lists    = D('Document')->lists(null);
+    public function index2() {
+        $users1 = new Users1Model();
+        $list = $users1->userList();
+        $this->assign('list', $list);
+        $this->display();
+    }
 
-            $this->assign('category',$category);//栏目
-            $this->assign('lists',$lists);//列表
-            $this->assign('page',D('Document')->page);//分页
+    public function index3() {
 
-            $this->display();
-        }
+        $this->display();
     }
 
     public function upload(){

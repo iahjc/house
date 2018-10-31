@@ -1,0 +1,23 @@
+[ 2018-10-31T16:39:35+08:00 ] 172.130.50.52 /index.php?s=/admin/public/login.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000173s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.001521s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000183s ]
+SQL: SHOW COLUMNS FROM `onethink_ucenter_member` [ RunTime:0.006953s ]
+SQL: SELECT * FROM `onethink_ucenter_member` WHERE ( `username` = 'admin' ) LIMIT 1   [ RunTime:0.003019s ]
+SQL: UPDATE `onethink_ucenter_member` SET `last_login_time`=1540975175,`last_login_ip`='2894213684' WHERE ( `id` = 1 ) [ RunTime:0.003850s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.012197s ]
+SQL: SELECT `uid`,`nickname`,`sex`,`birthday`,`qq`,`score`,`login`,`reg_ip`,`reg_time`,`last_login_ip`,`last_login_time`,`status` FROM `onethink_member` WHERE ( `uid` = 1 ) LIMIT 1   [ RunTime:0.003069s ]
+SQL: SHOW COLUMNS FROM `onethink_action` [ RunTime:0.007120s ]
+SQL: SELECT * FROM `onethink_action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.001400s ]
+SQL: SHOW COLUMNS FROM `onethink_action_log` [ RunTime:0.007577s ]
+SQL: INSERT INTO `onethink_action_log` (`action_id`,`user_id`,`action_ip`,`model`,`record_id`,`create_time`,`remark`) VALUES (1,1,2894213684,'member',1,1540975175,'操作url：/index.php?s=/admin/public/login.html') [ RunTime:0.007129s ]
+SQL: SELECT * FROM `onethink_action` WHERE ( `name` = 'user_login' ) LIMIT 1   [ RunTime:0.000418s ]
+NOTIC: [8] Undefined offset: 1 /Users/alinec/Desktop/house/code/Application/Common/Common/function.php 第 605 行.
+NOTIC: [2] array_key_exists() expects parameter 2 to be array, null given /Users/alinec/Desktop/house/code/Application/Common/Common/function.php 第 605 行.
+SQL: SELECT COUNT(*) AS tp_count FROM `onethink_action_log` WHERE ( `action_id` = 1 ) AND ( `user_id` = 1 ) AND ( `create_time` > 1540888775 ) LIMIT 1   [ RunTime:0.003420s ]
+SQL: SHOW COLUMNS FROM `onethink_member` [ RunTime:0.008327s ]
+SQL: UPDATE `onethink_member` SET `score`=score+10 WHERE ( uid=1 AND status>-1 ) [ RunTime:0.007346s ]
+SQL: UPDATE `onethink_member` SET `login`=`login`+1,`last_login_time`=1540975175,`last_login_ip`='2894213684' WHERE ( `uid` = 1 ) [ RunTime:0.000924s ]
+
