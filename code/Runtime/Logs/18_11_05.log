@@ -1,0 +1,212 @@
+[ 2018-11-05T11:06:51+08:00 ] 172.130.50.52 /index.php?s=/home/index/bj/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000085s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.002931s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000033s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.005142s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.004387s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.018692s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.014625s ]
+SQL: UPDATE `onethink_track` SET `contact`=3 WHERE ( `uid` = 26 ) [ RunTime:0.022230s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000187s ]
+
+[ 2018-11-05T11:06:56+08:00 ] 172.130.50.52 /index.php?s=/home/index/bj/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000384s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000029s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.031437s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.005677s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.005286s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.009629s ]
+SQL: UPDATE `onethink_track` SET `contact`=4 WHERE ( `uid` = 26 ) [ RunTime:0.011895s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000083s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000180s ]
+
+[ 2018-11-05T11:07:31+08:00 ] 172.130.50.52 /index.php?s=/home/index/bj/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000298s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.005574s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.010595s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.007871s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.013912s ]
+SQL: UPDATE `onethink_track` SET `contact`=5 WHERE ( `uid` = 26 ) [ RunTime:0.019711s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000132s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000229s ]
+
+[ 2018-11-05T11:11:58+08:00 ] 172.130.50.52 /index.php?s=/home/index/bj/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000042s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000375s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000030s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.020943s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.018801s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.007526s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.006008s ]
+SQL: UPDATE `onethink_track` SET `contact`=6 WHERE ( `uid` = 26 ) [ RunTime:0.019345s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000077s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000174s ]
+
+[ 2018-11-05T11:30:08+08:00 ] 172.130.50.52 /index.php?s=/home/index/addRemake/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000302s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.005300s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.006860s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.005873s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.005063s ]
+SQL: UPDATE `onethink_track` SET `remake`='I am test!' WHERE ( `uid` = 26 ) [ RunTime:0.015235s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000080s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000191s ]
+
+[ 2018-11-05T11:31:13+08:00 ] 172.130.50.52 /index.php?s=/home/index/bj/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000110s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.003308s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000075s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.005905s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.215990s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.009966s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.011105s ]
+SQL: UPDATE `onethink_track` SET `contact`=7 WHERE ( `uid` = 26 ) [ RunTime:0.017574s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000175s ]
+
+[ 2018-11-05T11:31:14+08:00 ] 172.130.50.52 /index.php?s=/home/index/bj/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000363s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000089s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.009199s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.004742s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.005286s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.004582s ]
+SQL: UPDATE `onethink_track` SET `contact`=8 WHERE ( `uid` = 26 ) [ RunTime:0.020019s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000086s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000213s ]
+
+[ 2018-11-05T11:32:55+08:00 ] 172.130.50.52 /index.php?s=/home/index/addRemake/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000317s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000023s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.006498s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.011151s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.005800s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.004265s ]
+SQL: UPDATE `onethink_track` SET `remake`='I am test!' WHERE ( `uid` = 26 ) [ RunTime:0.014603s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000040s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000085s ]
+
+[ 2018-11-05T11:33:19+08:00 ] 172.130.50.52 /index.php?s=/home/index/addRemake/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000060s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000445s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000031s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.005664s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.004565s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.006162s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.004642s ]
+SQL: UPDATE `onethink_track` SET `remake`='I am test!' WHERE ( `uid` = 26 ) [ RunTime:0.015505s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000169s ]
+
+[ 2018-11-05T11:33:47+08:00 ] 172.130.50.52 /index.php?s=/home/index/addRemake/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000040s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000292s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.007223s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.041379s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.021405s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.013881s ]
+SQL: UPDATE `onethink_track` SET `remake`='I am test!sdds' WHERE ( `uid` = 26 ) [ RunTime:0.026967s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000174s ]
+
+[ 2018-11-05T11:46:52+08:00 ] 172.130.50.52 /index.php?s=/home/index/setValid/id/26.html&isValid=1
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000041s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000307s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000022s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.006288s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.004827s ]
+NOTIC: [8] Undefined index: isValid /Users/alinec/Desktop/house/code/Application/Home/Controller/IndexController.class.php 第 56 行.
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.005740s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.004642s ]
+SQL: UPDATE `onethink_track` SET `isValid`=null WHERE ( `uid` = 26 ) [ RunTime:0.018073s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000081s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000179s ]
+
+[ 2018-11-05T14:00:44+08:00 ] 172.130.50.52 /index.php?s=/home/index/setValid/id/26.html&isValid=1
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000039s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000291s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000020s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.006659s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.005378s ]
+NOTIC: [8] Undefined index: isValid /Users/alinec/Desktop/house/code/Application/Home/Controller/IndexController.class.php 第 56 行.
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.005356s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.004640s ]
+SQL: UPDATE `onethink_track` SET `isValid`=null WHERE ( `uid` = 26 ) [ RunTime:0.018597s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000079s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000170s ]
+
+[ 2018-11-05T14:00:56+08:00 ] 172.130.50.52 /index.php?s=/home/index/addRemake/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000043s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000336s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.009340s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.026861s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.006444s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.005906s ]
+SQL: UPDATE `onethink_track` SET `remake`='I am test!sdds' WHERE ( `uid` = 26 ) [ RunTime:0.014845s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000087s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000188s ]
+
+[ 2018-11-05T14:01:06+08:00 ] 172.130.50.52 /index.php?s=/home/index/bj/id/26.html
+INFO: [ app_begin ] --START--
+INFO: Run Think\Behavior\ReadHtmlCache [ RunTime:0.000038s ]
+INFO: [ app_begin ] --END-- [ RunTime:0.000295s ]
+INFO: [ action_begin ] --START--
+INFO: [ action_begin ] --END-- [ RunTime:0.000021s ]
+SQL: SHOW COLUMNS FROM `onethink_config` [ RunTime:0.039396s ]
+SQL: SELECT `type`,`name`,`value` FROM `onethink_config` WHERE ( `status` = 1 )  [ RunTime:0.018759s ]
+SQL: SHOW COLUMNS FROM `onethink_track` [ RunTime:0.006701s ]
+SQL: SELECT * FROM `onethink_track` WHERE ( `uid` = 26 ) LIMIT 1   [ RunTime:0.009273s ]
+SQL: UPDATE `onethink_track` SET `contact`=9 WHERE ( `uid` = 26 ) [ RunTime:0.024225s ]
+INFO: [ app_end ] --START--
+INFO: Run Think\Behavior\ShowPageTrace [ RunTime:0.000082s ]
+INFO: [ app_end ] --END-- [ RunTime:0.000187s ]
+

@@ -8,6 +8,7 @@
 // +----------------------------------------------------------------------
 
 namespace Home\Controller;
+use Home\Model\TrackModel;
 use Home\Model\Users1Model;
 
 /**
@@ -36,6 +37,27 @@ class IndexController extends HomeController {
         $this->display();
     }
 
+
+    public function bj() {
+        $id = $_GET['id'];
+        $track = new TrackModel();
+        return $track->setBj($id);
+    }
+
+    public function addRemake() {
+        $id = $_GET['id'];
+        $val = $_POST['remake'];
+        $track = new TrackModel();
+        return $track->addRemake($id, $val);
+    }
+
+    public function setValid() {
+        $id = $_GET["id"];
+        $isValid = $_POST['isValid'];
+        $track = new TrackModel();
+        return $track->setValid($id, $isValid);
+
+    }
     public function upload(){
     	if(IS_POST){
             //又拍云

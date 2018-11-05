@@ -15,7 +15,7 @@ use Think\Model;
  */
 class Users1Model extends Model {
     public function userList() {
-        $sql = "select * from onethink_users1 limit 0, 10";
+        $sql = "select * from onethink_users1 as u left join onethink_track as t on u.rf_id = t.uid limit 0, 10";
         return $this::query($sql);
     }
 }
